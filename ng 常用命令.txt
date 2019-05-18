@@ -1,0 +1,23 @@
+﻿npm install //安裝 相關包 
+ng build --prod --build-optimizer  //編譯
+ng serve --open //
+
+ng g  c  childpage --inline-template --inline-style --module=app.module //添加组件，内联样式，内联模版，添加到app.module中去
+
+
+
+
+@NgModule({
+  imports:      [ BrowserModule ],
+  providers:    [ Logger ],
+  declarations: [ AppComponent ],
+  exports:      [ AppComponent ],
+  bootstrap:    [ AppComponent ]
+});
+
+
+//imports--angular模块把特性合并成离散单元的一种方式，当应用需要模块的特性时，将其添加到imports数组中，它告诉Angular应用需要它们来正常工作。
+//providers--创建的服务加入到当前模块中，如果是根模块，则可以用于应用任何部分。
+//declarations--声明当前module控制的组件，创建的指令和管道也要添加至declarations数组中。
+//exports--declarations 的子集，可用于其它模块的组件模板。
+//bootstrap--指定应用的主视图（称为根组件），它是所有其它视图的宿主。只有根模块才能设置bootstrap属性 
